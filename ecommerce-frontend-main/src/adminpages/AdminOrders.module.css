@@ -1,0 +1,79 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1d21;
+  margin: 0 0 1.25rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #dde1e6;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table th {
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.75rem 1rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dde1e6;
+}
+
+.table td {
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  color: #1a1d21;
+  border-bottom: 1px solid #eceef1;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.pending {
+  background: #fef3e2;
+  color: #b3720c;
+}
+
+.completed {
+  background: #e6f4ea;
+  color: #2e7d32;
+}
+
+.cancelled {
+  background: #fdeceb;
+  color: #b5533c;
+}
+
+.viewLink {
+  color: #1f2937;
+  font-size: 0.85rem;
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+}

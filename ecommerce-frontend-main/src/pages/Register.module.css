@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+.page {
+  --ink: #14231f;
+  --surface: #1c2f29;
+  --paper: #f5f1e8;
+  --paper-dim: #c9c6ba;
+  --gold: #d4a24e;
+  --rust: #b5533c;
+  --hairline: #3a4c44;
+  --field-bg: #16241f;
+
+  position: relative;
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem 0;
+}
+
+.wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.est {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--paper-dim);
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: var(--surface);
+  border: 0.5px solid var(--hairline);
+  border-radius: 4px;
+  padding: 3rem 2.5rem 2.5rem;
+  text-align: center;
+  animation: rise 0.6s ease-out both;
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background-image: radial-gradient(circle, var(--ink) 4px, transparent 4.5px);
+  background-size: 20px 14px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+.card::before { top: -7px; }
+.card::after { bottom: -7px; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stamp {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.5rem;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+}
+
+.tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+  margin: 0 0 1.25rem;
+}
+
+.headline {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+
+.sub {
+  font-size: 0.9rem;
+  color: var(--paper-dim);
+  margin: 0 0 1.75rem;
+}
+
+.serverError {
+  background: rgba(181, 83, 60, 0.15);
+  border: 1px solid var(--rust);
+  color: #f0b7a8;
+  font-size: 0.85rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 3px;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  text-align: left;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+}
+
+.optional {
+  text-transform: none;
+  letter-spacing: normal;
+  opacity: 0.7;
+}
+
+.field input,
+.field textarea {
+  background: var(--field-bg);
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+  color: var(--paper);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.7rem 0.85rem;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #6f7d76;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 162, 78, 0.18);
+}
+
+.errorText {
+  font-size: 0.78rem;
+  color: #f0b7a8;
+}
+
+.primaryBtn {
+  height: 48px;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  background: var(--gold);
+  color: #2a1c05;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+}
+
+.primaryBtn:hover:not(:disabled) {
+  background: #e0b264;
+  transform: translateY(-1px);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.switchText {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--paper-dim);
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--paper-dim);
+  opacity: 0.7;
+}
+
+@media (min-width: 560px) {
+  .row {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .row .field {
+    flex: 1;
+  }
+}
+
+@media (max-width: 380px) {
+  .card {
+    padding: 2.5rem 1.5rem 2rem;
+  }
+}

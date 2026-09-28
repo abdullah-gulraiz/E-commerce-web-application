@@ -1,0 +1,151 @@
+.page {
+  max-width: 880px;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1d21;
+  margin: 0;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0.35rem 0 1.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.pending {
+  background: #fef3e2;
+  color: #b3720c;
+}
+
+.completed {
+  background: #e6f4ea;
+  color: #2e7d32;
+}
+
+.cancelled {
+  background: #fdeceb;
+  color: #b5533c;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #dde1e6;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.cardHeading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1d21;
+  margin: 0 0 1rem;
+}
+
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.itemsTable th {
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #eceef1;
+}
+
+.itemsTable td {
+  padding: 0.65rem 0;
+  font-size: 0.88rem;
+  color: #1a1d21;
+  border-bottom: 1px solid #eceef1;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1d21;
+}
+
+.sideCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  font-size: 0.88rem;
+  color: #1a1d21;
+  margin: 0 0 0.25rem;
+}
+
+.lineMuted {
+  font-size: 0.82rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.statusSelect {
+  width: 100%;
+  height: 38px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 0 0.7rem;
+  font-size: 0.88rem;
+  color: #111827;
+  background: #fafafa;
+  margin-bottom: 0.85rem;
+}
+
+.saveBtn {
+  width: 100%;
+  height: 38px;
+  background: #1f2937;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.saveBtn:hover {
+  background: #111827;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

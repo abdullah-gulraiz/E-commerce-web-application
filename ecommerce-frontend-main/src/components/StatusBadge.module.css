@@ -1,0 +1,28 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+}
+
+.pending {
+  background: rgba(212, 162, 78, 0.15);
+  color: #d4a24e;
+  border: 1px solid #d4a24e;
+}
+
+.completed {
+  background: rgba(99, 153, 34, 0.15);
+  color: #97c459;
+  border: 1px solid #97c459;
+}
+
+.cancelled {
+  background: rgba(181, 83, 60, 0.15);
+  color: #e0997b;
+  border: 1px solid #b5533c;
+}

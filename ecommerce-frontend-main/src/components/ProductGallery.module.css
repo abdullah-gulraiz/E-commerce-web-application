@@ -1,0 +1,45 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mainImageWrap {
+  aspect-ratio: 1 / 1;
+  background: #16241f;
+  border: 0.5px solid #3a4c44;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbRow {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.thumbBtn {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border-radius: 3px;
+  border: 1px solid #3a4c44;
+  background: #16241f;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.thumbActive {
+  border-color: #d4a24e;
+}
+
+.thumbImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

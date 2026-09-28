@@ -1,0 +1,41 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.navBtn,
+.pageBtn {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 0.6rem;
+  background: transparent;
+  border: 1px solid #3a4c44;
+  border-radius: 3px;
+  color: #c9c6ba;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.navBtn:hover:not(:disabled),
+.pageBtn:hover {
+  border-color: #d4a24e;
+  color: #f5f1e8;
+}
+
+.navBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageBtnActive {
+  background: #d4a24e;
+  border-color: #d4a24e;
+  color: #2a1c05;
+}
+
+.pageBtnActive:hover {
+  color: #2a1c05;
+}

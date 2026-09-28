@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+.header {
+  --ink: #14231f;
+  --surface: #1c2f29;
+  --paper: #f5f1e8;
+  --paper-dim: #c9c6ba;
+  --gold: #d4a24e;
+  --rust: #b5533c;
+  --hairline: #3a4c44;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--ink);
+  border-bottom: 0.5px solid var(--hairline);
+  font-family: 'Inter', sans-serif;
+}
+
+.headerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--paper);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: var(--paper-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.navLink:hover {
+  color: var(--gold);
+}
+
+.searchBox {
+  flex: 1;
+  max-width: 380px;
+}
+
+.searchBox input {
+  width: 100%;
+  height: 38px;
+  background: #16241f;
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+  color: var(--paper);
+  padding: 0 0.9rem;
+  font-size: 0.88rem;
+}
+
+.searchBox input::placeholder {
+  color: #6f7d76;
+}
+
+.searchBox input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.iconBtn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.iconBtn:hover {
+  background: var(--surface);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #2a1c05;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoutBtn {
+  height: 36px;
+  padding: 0 0.9rem;
+  border-radius: 3px;
+  border: 1px solid var(--hairline);
+  background: transparent;
+  color: var(--paper-dim);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+
+.logoutBtn:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+}
+
+@media (max-width: 860px) {
+  .nav {
+    display: none;
+  }
+
+  .headerInner {
+    flex-wrap: wrap;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .searchBox {
+    order: 3;
+    max-width: none;
+    flex-basis: 100%;
+  }
+}

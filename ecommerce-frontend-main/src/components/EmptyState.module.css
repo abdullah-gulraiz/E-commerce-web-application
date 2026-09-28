@@ -1,0 +1,32 @@
+.wrap {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  color: #f5f1e8;
+  margin: 0 0 0.5rem;
+}
+
+.message {
+  font-size: 0.9rem;
+  color: #c9c6ba;
+  margin: 0 0 1.25rem;
+}
+
+.actionBtn {
+  background: transparent;
+  border: 1px solid #3a4c44;
+  color: #f5f1e8;
+  padding: 0.6rem 1.25rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.actionBtn:hover {
+  border-color: #d4a24e;
+  color: #d4a24e;
+}

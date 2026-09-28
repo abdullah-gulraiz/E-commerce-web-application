@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+.page {
+  --ink: #14231f;
+  --surface: #1c2f29;
+  --surface-raised: #223a33;
+  --paper: #f5f1e8;
+  --paper-dim: #c9c6ba;
+  --gold: #d4a24e;
+  --rust: #b5533c;
+  --hairline: #3a4c44;
+
+  position: relative;
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--paper);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+}
+
+.route {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.routeSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.routePath {
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-dasharray: 10 12;
+  opacity: 0.35;
+  stroke-dashoffset: 1400;
+  animation: draw 2.6s ease-out forwards;
+}
+
+.routeDot {
+  fill: var(--gold);
+  offset-path: path('M -50 620 C 250 500, 200 260, 480 300 S 900 120, 640 340 S 380 560, 600 480 S 900 380, 1000 340');
+  offset-distance: 0%;
+  animation: travel 2.6s ease-out forwards;
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes travel {
+  to { offset-distance: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .routePath,
+  .routeDot {
+    animation: none;
+    stroke-dashoffset: 0;
+    offset-distance: 100%;
+  }
+}
+
+.topBar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem 0;
+}
+
+.wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.est {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--paper-dim);
+}
+
+.stage {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: var(--surface);
+  border: 0.5px solid var(--hairline);
+  border-radius: 4px;
+  padding: 3rem 2.5rem 2.5rem;
+  text-align: center;
+  animation: rise 0.7s ease-out 0.3s both;
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background-image: radial-gradient(circle, var(--ink) 4px, transparent 4.5px);
+  background-size: 20px 14px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+.card::before { top: -7px; }
+.card::after { bottom: -7px; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stamp {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.5rem;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+}
+
+.tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+  margin: 0 0 1.25rem;
+}
+
+.headline {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  line-height: 1.2;
+  margin: 0 0 0.9rem;
+}
+
+.sub {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--paper-dim);
+  margin: 0 0 2rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  height: 48px;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.primaryBtn {
+  background: var(--gold);
+  color: #2a1c05;
+  border: none;
+}
+
+.primaryBtn:hover {
+  background: #e0b264;
+  transform: translateY(-1px);
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: var(--paper);
+  border: 1px solid var(--hairline);
+}
+
+.secondaryBtn:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+  transform: translateY(-1px);
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--paper-dim);
+  opacity: 0.7;
+}
+
+@media (min-width: 640px) {
+  .actions {
+    flex-direction: row;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 380px) {
+  .card {
+    padding: 2.5rem 1.5rem 2rem;
+  }
+}

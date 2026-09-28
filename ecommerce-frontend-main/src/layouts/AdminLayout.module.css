@@ -1,0 +1,93 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  background: #f2f3f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-right: 1px solid #dde1e6;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1d21;
+  margin: 0 0 2rem 0.5rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.navLink {
+  padding: 0.6rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #374151;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  background: #f2f3f5;
+}
+
+.logoutBtn {
+  height: 38px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: transparent;
+  color: #6b7280;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem 2.5rem;
+}
+
+@media (max-width: 720px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 1.25rem;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    margin: 0 1rem 0 0;
+  }
+
+  .logoutBtn {
+    margin-left: auto;
+    height: 34px;
+  }
+
+  .content {
+    padding: 1.25rem;
+  }
+}

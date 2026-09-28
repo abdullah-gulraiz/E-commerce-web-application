@@ -1,0 +1,111 @@
+.row {
+  display: grid;
+  grid-template-columns: 64px 1fr auto auto auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-bottom: 0.5px solid #3a4c44;
+}
+
+.imageWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #16241f;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  min-width: 0;
+}
+
+.title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #f5f1e8;
+  margin: 0 0 0.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.price {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.82rem;
+  color: #c9c6ba;
+  margin: 0;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid #3a4c44;
+  border-radius: 3px;
+  padding: 0.3rem 0.7rem;
+}
+
+.stepper button {
+  background: transparent;
+  border: none;
+  color: #f5f1e8;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.stepper span {
+  font-size: 0.88rem;
+  color: #f5f1e8;
+  min-width: 16px;
+  text-align: center;
+}
+
+.lineTotal {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.92rem;
+  color: #d4a24e;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.removeBtn {
+  background: transparent;
+  border: none;
+  color: #c9c6ba;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.removeBtn:hover {
+  color: #b5533c;
+}
+
+@media (max-width: 680px) {
+  .row {
+    grid-template-columns: 56px 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 0.6rem;
+  }
+
+  .stepper {
+    grid-column: 2;
+  }
+
+  .lineTotal {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .removeBtn {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
